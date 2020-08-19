@@ -1,7 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3000;
 
 const laptopData = JSON.parse(
   fs.readFileSync(`${__dirname}/data/data.json`, "utf-8")
