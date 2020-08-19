@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, "localhost", () => {});
+server.listen(process.env.PORT, "localhost", () => {});
 
 const replaceTemplate = (originalHtml, laptop) => {
   let output = originalHtml.replace(/{%PRODUCTNAME%}/g, laptop.productName);
