@@ -19,13 +19,13 @@ const server = http
       res.writeHead(200, { "Content-type": "text/html" });
 
       fs.readFile(
-        `${__dirname}/templates/overview.html`,
+        `${__dirname}/client/templates/overview.html`,
         "utf-8",
         (err, data) => {
           let output = data;
 
           fs.readFile(
-            `${__dirname}/templates/card.html`,
+            `${__dirname}/client/templates/card.html`,
             "utf-8",
             (err, data) => {
               const cardsOutput = laptopData
@@ -47,7 +47,7 @@ const server = http
       res.writeHead(200, { "Content-type": "text/html" });
 
       fs.readFile(
-        `${__dirname}/templates/laptop.html`,
+        `${__dirname}/client/templates/laptop.html`,
         "utf-8",
         (err, data) => {
           const laptop = laptopData[id];
@@ -57,7 +57,7 @@ const server = http
         }
       );
     } else if (/\.(jpg|jpeg|png|ico|gif)$/i.test(pathName)) {
-      fs.readFile(`${__dirname}/data/img${pathName}`, (err, data) => {
+      fs.readFile(`${__dirname}/client/img${pathName}`, (err, data) => {
         res.writeHead(200, { "Content-type": "image/jpg" });
 
         res.end(data);
