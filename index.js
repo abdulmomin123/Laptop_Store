@@ -1,7 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
-let PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const laptopData = JSON.parse(
   fs.readFileSync(`${__dirname}/data/data.json`, "utf-8")
@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, "127.0.0.1", () => {});
+server.listen(PORT, "localhost", () => {});
 
 const replaceTemplate = (originalHtml, laptop) => {
   let output = originalHtml.replace(/{%PRODUCTNAME%}/g, laptop.productName);
