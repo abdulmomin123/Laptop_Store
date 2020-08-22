@@ -7,6 +7,7 @@ const laptopData = JSON.parse(
   fs.readFileSync(`${__dirname}/data/data.json`, "utf-8")
 );
 
+// Creates the server and listens for requests
 const server = http
   .createServer((req, res) => {
     // URLs & IDs
